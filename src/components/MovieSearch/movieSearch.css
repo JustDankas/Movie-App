@@ -1,0 +1,29 @@
+.searched-movies{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+.movies-found-title{
+    /* transform: translateX(-35%); */
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width:1920px) {
+    .movies-found-title{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width:1280px) {
+    .movies-found-title{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width:600px) {
+    .movies-found-title{
+        font-size: 1.6rem;
+    }
+}

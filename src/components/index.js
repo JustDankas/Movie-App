@@ -1,0 +1,15 @@
+export {default as Header} from './Header/Header';
+export {default as Footer} from './Footer/Footer';
+export {default as Home} from './Home/Home';
+export {default as TopMovies} from './Top250Movies/TopMovies';
+export {default as MovieDetail} from './MovieDetail/MovieDetail';
+export {default as TvsDetails} from './TvsDetails/TvsDetails';
+export {default as DetailsPage} from './DetailsPage/DetailsPage';
+export {default as Carousel} from './Utilities/Carousel/Carousel';
+export {default as Loading} from './Utilities/Loading/Loading';
+export {default as MovieSearch} from './MovieSearch/MovieSearch';
+export {default as MovieListing} from './MovieListing/MovieListing';
+export {default as PagesNav} from './Utilities/PagesNav/PagesNav';
+export {default as MostPopularTvs} from './MostPopularTvs/MostPopularTvs';
+export {default as Logo} from './Logo/Logo';
+export {default as PageNotFound} from './PageNotFound/PageNotFound';

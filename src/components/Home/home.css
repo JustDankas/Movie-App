@@ -1,0 +1,61 @@
+
+.home-c{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movies-in-theaters,.popular-tv-series{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.carousel-headings{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel-title{
+    color: #fff;
+    transition: color .3s;
+    font-size: 1.5rem;
+
+}
+.carousel-more{
+    color: #fff;
+    transition: color .3s;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: 3rem;
+    font-weight: bold;
+}
+.carousel-more:hover{
+    color: #f95959;
+}
+
+@media screen and (max-width:790px) {
+    .carousel-headings{
+        flex-direction: column; 
+        justify-content:space-around;
+            
+    }
+    .carousel-more,.carousel-title{
+        font-size: 1.2rem;
+    }
+    .carousel-more{
+        transform: translateX(120px);
+        margin-top: 0;
+    }
+    .carousel-title{
+        margin-bottom: 0rem;
+        transform: translateX(-60px);
+    }
+    
+}

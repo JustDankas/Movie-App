@@ -1,0 +1,55 @@
+
+.play-trailer-btn{
+    position: relative;
+    background-color: #347474;
+    border: none;
+    font-size: 1.3rem;
+    width: 12.8rem;
+    height: 3.2rem;
+    color: #fff;
+    padding: .8rem 0;
+    padding-left: 1.6rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transform: scale(.8);
+    margin-top: 1rem;
+}
+
+.half-circle-left,.half-circle-right{
+    position: absolute;
+    background-color: #347474;
+    height: 100%;
+    width: 3.2rem;
+    border-radius: 100%;
+    display: block;
+    top: 0%;
+
+}
+.half-circle-left{
+    left: 0%;
+    transform: translateX(-1.6rem);
+}
+.half-circle-right{
+    right: 0%;
+    transform: translateX(1.6rem);
+}
+
+.play-icon{
+    position: absolute;
+    transform: translateY(.9rem);
+    color: #fff;
+}
+.play-text{
+    position: absolute;
+    transform: translateX(1.2rem);
+    
+}
+
+.red{
+    background-color: red;
+}
+.bigger{
+    font-size: 2rem;
+    transform: translateY(.6rem);
+}
