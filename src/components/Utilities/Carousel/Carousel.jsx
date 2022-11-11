@@ -53,65 +53,36 @@ function Carousel({ data }) {
   }, [canClick]);
 
   function HandleNextSlide() {
+    // Total items smaller then carousel items
     if (dataLength < nOfItems) return;
+    // Cant spam click
     if (!canClick) return;
-    const extras = dataLength % nOfItems;
     setCurrentSlide((prev) => {
-      if (extras > 0) {
-        if (prev + nOfItems + extras == dataLength) return prev + extras;
-      }
-      if (prev + nOfItems == dataLength) return prev;
-
-      console.log(nOfItems);
+      if (prev + nOfItems >= dataLength - nOfItems)
+        return dataLength - nOfItems;
       return prev + nOfItems;
     });
     setCanClick(false);
   }
   function HandlePreviousSlide() {
+    // Total items smaller then carousel items
     if (dataLength < nOfItems) return;
+    // Cant spam click
     if (!canClick) return;
+
     const extras = dataLength % nOfItems;
     setCurrentSlide((prev) => {
-      if (extras > 0) {
-        if (prev + nOfItems == dataLength) return prev - extras;
-      }
+      if (prev > dataLength - nOfItems) return dataLength - nOfItems - extras;
       if (prev === 0) return prev;
       return prev - nOfItems;
     });
+
     setCanClick(false);
   }
-
-  function handleTouchStart(e) {
-    setScreenX(e.changedTouches[0].screenX);
-  }
-  function handleTouchEnd(e) {
-    // setCurrentSlide(Math.floor(currentSlide+0.5))
-  }
-
-  function handleTouchMove(e) {
-    const diff = screenX - e.changedTouches[0].screenX;
-    const threshhold = 30;
-    // console.log('diff',diff)
-    // console.log('screenX',screenX)
-    console.log(diff);
-    if (currentSlide + diff >= 0 && currentSlide + diff <= dataLength) {
-      setCurrentSlide(currentSlide + 0.01);
-      setScreenX(e.changedTouches[0].screenX);
-    }
-    // setCurrentSlide(0)
-    // if((diff%threshhold)>0){
-    //     setScreenX(e.changedTouches[0].screenX)
-    //     setCurrentSlide((currentSlide+0.01*(diff%threshhold)))
-    // }
-    // else if((diff%threshhold)<0){
-    //     setScreenX(e.changedTouches[0].screenX)
-    //     setCurrentSlide((currentSlide+0.01*(diff%threshhold)))
-    // }
-  }
-  console.log(currentSlide);
+  console.log(currentSlide, dataLength);
   if (data == null) return;
   return (
-    <div className="carousel-c" onTouchMove={(e) => handleTouchMove(e)}>
+    <div className="carousel-c">
       <button className="left-arrow" onClick={() => HandleNextSlide()}>
         {<AiOutlineArrowRight />}
       </button>
@@ -121,8 +92,6 @@ function Carousel({ data }) {
           style={{
             transform: `translateX(-${currentSlide * (100 / nOfItems)}%)`,
           }}
-          onTouchStart={(e) => handleTouchStart(e)}
-          onTouchEnd={(e) => handleTouchEnd(e)}
         >
           {data?.map((movie, index) => (
             <div key={index} className="carousel-item">
